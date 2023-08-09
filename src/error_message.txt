@@ -1,0 +1,223 @@
+Executing task: platformio run --environment pico32 
+
+Processing pico32 (platform: espressif32@; board: m5stack-atom; framework: arduino)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/m5stack-atom.html
+PLATFORM: Espressif 32 (6.3.2) > M5Stack-ATOM
+HARDWARE: ESP32 240MHz, 320KB RAM, 4MB Flash
+DEBUG: Current (cmsis-dap) External (cmsis-dap, esp-bridge, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - framework-arduinoespressif32 @ 3.20009.0 (2.0.9) 
+ - tool-esptoolpy @ 1.40501.0 (4.5.1) 
+ - toolchain-xtensa-esp32 @ 8.4.0+2021r2-patch5
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 34 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- SmartLeds @ 1.2.0
+Building in release mode
+Compiling .pio/build/pico32/src/main.cpp.o
+Compiling .pio/build/pico32/lib2b4/SmartLeds/SmartLeds.cpp.o
+In file included from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/sys-include/stdio.h:35,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h:27,
+                 from src/main.cpp:1:
+/home/mirek/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/port/xtensa/include/freertos/portmacro.h:717:41: error: static assertion failed: portGET_ARGUMENT_COUNT() result does not match for 0 arguments
+ _Static_assert(portGET_ARGUMENT_COUNT() == 0, "portGET_ARGUMENT_COUNT() result does not match for 0 arguments");
+                                         ^
+Compiling .pio/build/pico32/FrameworkArduino/Esp.cpp.o
+Compiling .pio/build/pico32/FrameworkArduino/FunctionalInterrupt.cpp.o
+Compiling .pio/build/pico32/FrameworkArduino/HardwareSerial.cpp.o
+Compiling .pio/build/pico32/FrameworkArduino/IPAddress.cpp.o
+Compiling .pio/build/pico32/FrameworkArduino/IPv6Address.cpp.o
+In file included from src/main.cpp:2:
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h: In constructor 'SmartLed::SmartLed(const LedType&, int, int, int, BufferType)':
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:111:34: error: 'DPORT_PERIP_CLK_EN_REG' was not declared in this scope
+         DPORT_SET_PERI_REG_MASK( DPORT_PERIP_CLK_EN_REG, DPORT_RMT_CLK_EN );
+                                  ^~~~~~~~~~~~~~~~~~~~~~
+Compiling .pio/build/pico32/FrameworkArduino/MD5Builder.cpp.o
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:111:34: note: suggested alternative: 'SPI_MOSI_DLEN_REG'
+         DPORT_SET_PERI_REG_MASK( DPORT_PERIP_CLK_EN_REG, DPORT_RMT_CLK_EN );
+                                  ^~~~~~~~~~~~~~~~~~~~~~
+                                  SPI_MOSI_DLEN_REG
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:111:58: error: 'DPORT_RMT_CLK_EN' was not declared in this scope
+         DPORT_SET_PERI_REG_MASK( DPORT_PERIP_CLK_EN_REG, DPORT_RMT_CLK_EN );
+                                                          ^~~~~~~~~~~~~~~~
+Compiling .pio/build/pico32/FrameworkArduino/Print.cpp.o
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:111:9: error: 'DPORT_SET_PERI_REG_MASK' was not declared in this scope
+         DPORT_SET_PERI_REG_MASK( DPORT_PERIP_CLK_EN_REG, DPORT_RMT_CLK_EN );
+         ^~~~~~~~~~~~~~~~~~~~~~~
+Compiling .pio/build/pico32/FrameworkArduino/Stream.cpp.o
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:111:9: note: suggested alternative: 'SET_PERI_REG_MASK'
+         DPORT_SET_PERI_REG_MASK( DPORT_PERIP_CLK_EN_REG, DPORT_RMT_CLK_EN );
+         ^~~~~~~~~~~~~~~~~~~~~~~
+         SET_PERI_REG_MASK
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:112:36: error: 'DPORT_PERIP_RST_EN_REG' was not declared in this scope
+         DPORT_CLEAR_PERI_REG_MASK( DPORT_PERIP_RST_EN_REG, DPORT_RMT_RST );
+                                    ^~~~~~~~~~~~~~~~~~~~~~
+Compiling .pio/build/pico32/FrameworkArduino/StreamString.cpp.o
+In file included from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/sys-include/stdlib.h:19,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/cstdlib:75,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/stdlib.h:36,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include/assert.h:21,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/sys-include/sys/reent.h:503,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include/sys/reent.h:17,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/sys-include/wchar.h:6,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/cwchar:44,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/bits/postypes.h:40,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/iosfwd:40,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/memory:72,
+                 from .pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:31,
+                 from .pio/libdeps/pico32/SmartLeds/src/SmartLeds.cpp:1:
+/home/mirek/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/port/xtensa/include/freertos/portmacro.h:717:41: error: static assertion failed: portGET_ARGUMENT_COUNT() result does not match for 0 arguments
+ _Static_assert(portGET_ARGUMENT_COUNT() == 0, "portGET_ARGUMENT_COUNT() result does not match for 0 arguments");
+                                         ^
+Compiling .pio/build/pico32/FrameworkArduino/Tone.cpp.o
+In file included from .pio/libdeps/pico32/SmartLeds/src/SmartLeds.cpp:1:
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h: In constructor 'SmartLed::SmartLed(const LedType&, int, int, int, BufferType)':
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:111:34: error: 'DPORT_PERIP_CLK_EN_REG' was not declared in this scope
+         DPORT_SET_PERI_REG_MASK( DPORT_PERIP_CLK_EN_REG, DPORT_RMT_CLK_EN );
+                                  ^~~~~~~~~~~~~~~~~~~~~~
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:112:60: error: 'DPORT_RMT_RST' was not declared in this scope
+         DPORT_CLEAR_PERI_REG_MASK( DPORT_PERIP_RST_EN_REG, DPORT_RMT_RST );
+                                                            ^~~~~~~~~~~~~
+In file included from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/sys-include/stdio.h:35,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h:27,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/Esp.cpp:20:
+/home/mirek/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/port/xtensa/include/freertos/portmacro.h:717:41: error: static assertion failed: portGET_ARGUMENT_COUNT() result does not match for 0 arguments
+ _Static_assert(portGET_ARGUMENT_COUNT() == 0, "portGET_ARGUMENT_COUNT() result does not match for 0 arguments");
+                                         ^
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:111:34: note: suggested alternative: 'SPI_MOSI_DLEN_REG'
+         DPORT_SET_PERI_REG_MASK( DPORT_PERIP_CLK_EN_REG, DPORT_RMT_CLK_EN );
+                                  ^~~~~~~~~~~~~~~~~~~~~~
+                                  SPI_MOSI_DLEN_REG
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:112:60: note: suggested alternative: 'SPI_OUT_RST'
+         DPORT_CLEAR_PERI_REG_MASK( DPORT_PERIP_RST_EN_REG, DPORT_RMT_RST );
+                                                            ^~~~~~~~~~~~~
+                                                            SPI_OUT_RST
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:112:9: error: 'DPORT_CLEAR_PERI_REG_MASK' was not declared in this scope
+         DPORT_CLEAR_PERI_REG_MASK( DPORT_PERIP_RST_EN_REG, DPORT_RMT_RST );
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:111:58: error: 'DPORT_RMT_CLK_EN' was not declared in this scope
+         DPORT_SET_PERI_REG_MASK( DPORT_PERIP_CLK_EN_REG, DPORT_RMT_CLK_EN );
+                                                          ^~~~~~~~~~~~~~~~
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:111:9: error: 'DPORT_SET_PERI_REG_MASK' was not declared in this scope
+         DPORT_SET_PERI_REG_MASK( DPORT_PERIP_CLK_EN_REG, DPORT_RMT_CLK_EN );
+         ^~~~~~~~~~~~~~~~~~~~~~~
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:112:9: note: suggested alternative: 'CLEAR_PERI_REG_MASK'
+         DPORT_CLEAR_PERI_REG_MASK( DPORT_PERIP_RST_EN_REG, DPORT_RMT_RST );
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+         CLEAR_PERI_REG_MASK
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:111:9: note: suggested alternative: 'SET_PERI_REG_MASK'
+         DPORT_SET_PERI_REG_MASK( DPORT_PERIP_CLK_EN_REG, DPORT_RMT_CLK_EN );
+         ^~~~~~~~~~~~~~~~~~~~~~~
+         SET_PERI_REG_MASK
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:112:36: error: 'DPORT_PERIP_RST_EN_REG' was not declared in this scope
+         DPORT_CLEAR_PERI_REG_MASK( DPORT_PERIP_RST_EN_REG, DPORT_RMT_RST );
+                                    ^~~~~~~~~~~~~~~~~~~~~~
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:112:60: error: 'DPORT_RMT_RST' was not declared in this scope
+         DPORT_CLEAR_PERI_REG_MASK( DPORT_PERIP_RST_EN_REG, DPORT_RMT_RST );
+                                                            ^~~~~~~~~~~~~
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:112:60: note: suggested alternative: 'SPI_OUT_RST'
+         DPORT_CLEAR_PERI_REG_MASK( DPORT_PERIP_RST_EN_REG, DPORT_RMT_RST );
+                                                            ^~~~~~~~~~~~~
+                                                            SPI_OUT_RST
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:112:9: error: 'DPORT_CLEAR_PERI_REG_MASK' was not declared in this scope
+         DPORT_CLEAR_PERI_REG_MASK( DPORT_PERIP_RST_EN_REG, DPORT_RMT_RST );
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/sys-include/stdio.h:35,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h:27,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/MD5Builder.cpp:19:
+/home/mirek/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/port/xtensa/include/freertos/portmacro.h:717:41: error: static assertion failed: portGET_ARGUMENT_COUNT() result does not match for 0 arguments
+ _Static_assert(portGET_ARGUMENT_COUNT() == 0, "portGET_ARGUMENT_COUNT() result does not match for 0 arguments");
+                                         ^
+In file included from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/sys-include/stdlib.h:19,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/cstdlib:75,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/stdlib.h:36,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/Print.cpp:24:
+/home/mirek/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/port/xtensa/include/freertos/portmacro.h:717:41: error: static assertion failed: portGET_ARGUMENT_COUNT() result does not match for 0 arguments
+ _Static_assert(portGET_ARGUMENT_COUNT() == 0, "portGET_ARGUMENT_COUNT() result does not match for 0 arguments");
+                                         ^
+.pio/libdeps/pico32/SmartLeds/src/SmartLeds.h:112:9: note: suggested alternative: 'CLEAR_PERI_REG_MASK'
+         DPORT_CLEAR_PERI_REG_MASK( DPORT_PERIP_RST_EN_REG, DPORT_RMT_RST );
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+         CLEAR_PERI_REG_MASK
+In file included from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/sys-include/stdlib.h:19,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/cstdlib:75,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/stdlib.h:36,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include/assert.h:21,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/sys-include/sys/reent.h:503,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include/sys/reent.h:17,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/sys-include/wchar.h:6,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/cwchar:44,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/bits/postypes.h:40,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/bits/char_traits.h:40,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/string:40,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/stdexcept:39,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/array:39,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/tuple:39,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/functional:54,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/FunctionalInterrupt.h:11,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/FunctionalInterrupt.cpp:8:
+/home/mirek/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/port/xtensa/include/freertos/portmacro.h:717:41: error: static assertion failed: portGET_ARGUMENT_COUNT() result does not match for 0 arguments
+ _Static_assert(portGET_ARGUMENT_COUNT() == 0, "portGET_ARGUMENT_COUNT() result does not match for 0 arguments");
+                                         ^
+In file included from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/sys-include/stdio.h:35,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h:27,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/Stream.cpp:23:
+/home/mirek/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/port/xtensa/include/freertos/portmacro.h:717:41: error: static assertion failed: portGET_ARGUMENT_COUNT() result does not match for 0 arguments
+ _Static_assert(portGET_ARGUMENT_COUNT() == 0, "portGET_ARGUMENT_COUNT() result does not match for 0 arguments");
+                                         ^
+In file included from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/sys-include/stdio.h:35,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h:27,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/IPAddress.cpp:20:
+/home/mirek/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/port/xtensa/include/freertos/portmacro.h:717:41: error: static assertion failed: portGET_ARGUMENT_COUNT() result does not match for 0 arguments
+ _Static_assert(portGET_ARGUMENT_COUNT() == 0, "portGET_ARGUMENT_COUNT() result does not match for 0 arguments");
+                                         ^
+In file included from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/sys-include/stdio.h:35,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h:27,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/IPv6Address.cpp:20:
+/home/mirek/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/port/xtensa/include/freertos/portmacro.h:717:41: error: static assertion failed: portGET_ARGUMENT_COUNT() result does not match for 0 arguments
+ _Static_assert(portGET_ARGUMENT_COUNT() == 0, "portGET_ARGUMENT_COUNT() result does not match for 0 arguments");
+                                         ^
+*** [.pio/build/pico32/src/main.cpp.o] Error 1
+In file included from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/sys-include/stdio.h:35,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h:27,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/StreamString.cpp:23:
+/home/mirek/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/port/xtensa/include/freertos/portmacro.h:717:41: error: static assertion failed: portGET_ARGUMENT_COUNT() result does not match for 0 arguments
+ _Static_assert(portGET_ARGUMENT_COUNT() == 0, "portGET_ARGUMENT_COUNT() result does not match for 0 arguments");
+                                         ^
+*** [.pio/build/pico32/lib2b4/SmartLeds/SmartLeds.cpp.o] Error 1
+In file included from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/sys-include/stdio.h:35,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h:27,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/Tone.cpp:1:
+/home/mirek/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/port/xtensa/include/freertos/portmacro.h:717:41: error: static assertion failed: portGET_ARGUMENT_COUNT() result does not match for 0 arguments
+ _Static_assert(portGET_ARGUMENT_COUNT() == 0, "portGET_ARGUMENT_COUNT() result does not match for 0 arguments");
+                                         ^
+*** [.pio/build/pico32/FrameworkArduino/FunctionalInterrupt.cpp.o] Error 1
+In file included from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/sys-include/stdlib.h:19,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/cstdlib:75,
+                 from /home/mirek/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/stdlib.h:36,
+                 from /home/mirek/.platformio/packages/framework-arduinoespressif32/cores/esp32/HardwareSerial.cpp:1:
+/home/mirek/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/port/xtensa/include/freertos/portmacro.h:717:41: error: static assertion failed: portGET_ARGUMENT_COUNT() result does not match for 0 arguments
+ _Static_assert(portGET_ARGUMENT_COUNT() == 0, "portGET_ARGUMENT_COUNT() result does not match for 0 arguments");
+                                         ^
+*** [.pio/build/pico32/FrameworkArduino/MD5Builder.cpp.o] Error 1
+*** [.pio/build/pico32/FrameworkArduino/HardwareSerial.cpp.o] Error 1
+*** [.pio/build/pico32/FrameworkArduino/Print.cpp.o] Error 1
+*** [.pio/build/pico32/FrameworkArduino/Esp.cpp.o] Error 1
+*** [.pio/build/pico32/FrameworkArduino/Stream.cpp.o] Error 1
+*** [.pio/build/pico32/FrameworkArduino/IPAddress.cpp.o] Error 1
+*** [.pio/build/pico32/FrameworkArduino/IPv6Address.cpp.o] Error 1
+*** [.pio/build/pico32/FrameworkArduino/StreamString.cpp.o] Error 1
+*** [.pio/build/pico32/FrameworkArduino/Tone.cpp.o] Error 1
+================================================================================ [FAILED] Took 4.60 seconds ================================================================================
+
+Environment    Status    Duration
+-------------  --------  ------------
+pico32         FAILED    00:00:04.598
+========================================================================== 1 failed, 0 succeeded in 00:00:04.598 ==========================================================================
+
+ *  The terminal process "platformio 'run', '--environment', 'pico32'" terminated with exit code: 1. 
+ *  Terminal will be reused by tasks, press any key to close it. 
